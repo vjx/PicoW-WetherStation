@@ -42,7 +42,9 @@ bus = I2C(0,sda=sdaPIN, scl=sclPIN, freq=400000)
 time.sleep(0.3)
 bmp = BMP280(bus)
 bmp.use_case(BMP280_CASE_INDOOR)
-    
+
+time.sleep(0.4)
+
 while True:
     try:
         pressure=bmp.pressure # Tenta obter uma nova leitura do sensor.
@@ -81,3 +83,4 @@ while True:
         tm.write([0, 0, 0, 0]) # all LEDS off
         time.sleep(0.8)
         
+
